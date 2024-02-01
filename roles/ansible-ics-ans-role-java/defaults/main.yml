@@ -1,0 +1,20 @@
+---
+java_openjdk_version: "15.0.2"
+java_openjdk_archive: "https://github.com/AdoptOpenJDK/openjdk15-binaries/releases/download/jdk-15.0.2%2B7/OpenJDK15U-jdk_x64_linux_hotspot_15.0.2_7.tar.gz"
+java_openjfx_version: "13.0.1"
+java_openjfx_archive: "https://artifactory.esss.lu.se/artifactory/swi-pkg/java/openjfx-{{ java_openjfx_version }}_linux-x64_bin-sdk.zip"
+
+# Set to false to disable oracle jdk 8 installation
+java_install_oracle_jdk8: true
+java_oracle_jdk8_version: "191"
+java_oracle_jdk8_archive: "https://artifactory.esss.lu.se/artifactory/swi-pkg/java/jdk-8u{{ java_oracle_jdk8_version }}-linux-x64.tar.gz"
+
+# Set to true to install maven
+java_install_maven: false
+java_maven_version: "3.6.0"
+java_maven_archive: "https://artifactory.esss.lu.se/artifactory/swi-pkg/apache/maven/{{ java_maven_version }}/apache-maven-{{ java_maven_version }}-bin.tar.gz"
+
+# Use OpenJDK as default Java
+java_openjdk_default: "{{ not java_install_oracle_jdk8 }}"
+az_devops_agent_user: "azureuser"
+az_devops_agent_group: "admin"
